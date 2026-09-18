@@ -1,44 +1,61 @@
 # Asteria Digital Bank
 
-Asteria Digital Bank is a self-contained reference web application for local development. It provides account views, transfer workflows, transaction history, and an assistant integration in a single Node.js process.
+Asteria Digital Bank は、ローカル環境で動作する銀行Webアプリケーションです。口座残高、口座詳細、取引履歴、振込、AIアシスタントを1つのNode.jsプロセスで利用できます。
 
-## Requirements
+## 動作要件
 
-- Node.js 20 or later
-- No external npm packages are required
+- Node.js 20以降
+- 外部npmパッケージは不要です
 
-## Start
+## 起動方法
 
 ```bash
 npm start
 ```
 
-The application listens on `http://127.0.0.1:3000` by default. At startup, a six-digit local access code is printed to the terminal. Use that code on the sign-in screen.
+起動後、ブラウザーで次のURLを開きます。
 
-For a fixed code during repeatable local sessions:
-
-```bash
-ASTERIA_ACCESS_CODE=246810 npm start
+```text
+http://127.0.0.1:3000
 ```
 
-On Windows Command Prompt:
+起動時にターミナルへ6桁のアクセスコードが表示されます。ログイン画面でそのコードを入力してください。
+
+毎回同じアクセスコードを使う場合は、環境変数を設定して起動できます。
+
+### Windows コマンドプロンプト
 
 ```bat
 set ASTERIA_ACCESS_CODE=246810
 npm start
 ```
 
-## Reference users
+### PowerShell
 
-- `yamada` - Taro Yamada
-- `sato` - Misaki Sato
+```powershell
+$env:ASTERIA_ACCESS_CODE="246810"
+npm start
+```
 
-## Main workflows
+### macOS / Linux
 
-- Account overview and account details
-- Recent transaction history
-- Instant transfer
-- Daily transfer limit display
-- Asteria Assistant for balance and registered-payee information
+```bash
+ASTERIA_ACCESS_CODE=246810 npm start
+```
 
-The application binds to the loopback interface by default.
+## ログインユーザー
+
+- `yamada` - 山田 太郎
+- `sato` - 佐藤 美咲
+
+## 主な画面
+
+- ログイン
+- ホーム（口座一覧・総資産残高・最近の入出金）
+- 口座詳細
+- 振込
+- AIアシスタント
+
+ログイン後は各機能が独立した画面として表示され、上部メニューから移動できます。
+
+このアプリケーションは既定で `127.0.0.1` のみに待ち受けます。

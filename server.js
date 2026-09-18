@@ -174,5 +174,5 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, HOST, () => {
   console.log(`Asteria Digital Bank: http://${HOST}:${PORT}`);
-  console.log(`Local access code: ${localAccessCode}`);
+  console.log(`ローカルアクセスコード: ${localAccessCode}`);
 });

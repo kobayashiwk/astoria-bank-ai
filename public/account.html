@@ -1,1 +1,21 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>口座詳細 | Asteria Digital Bank</title><link rel="stylesheet" href="/styles.css"></head><body><header class="topbar"><a class="brand" href="/"><div class="brand-mark"><span>A</span></div><div>ASTERIA<small>DIGITAL BANK</small></div></a><nav class="navlinks"><a href="/">ホーム</a></nav></header><main class="shell"><section class="hero"><div><div class="eyebrow">Account Details</div><h1>口座詳細</h1><p>口座残高と最近の取引を確認できます。</p></div></section><section class="card"><div class="card-pad"><div id="content">読み込み中...</div></div></section><p style="margin-top:18px"><a class="btn btn-secondary" href="/">← ダッシュボードへ</a></p></main><script type="module" src="/account.js"></script></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>口座詳細 | Asteria Digital Bank</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/dashboard.html"><div class="brand-mark"><span>A</span></div><div>ASTERIA<small>DIGITAL BANK</small></div></a>
+    <nav class="navlinks"><a href="/dashboard.html">ホーム</a><a href="/transfer.html">振込</a><a href="/assistant.html">AIアシスタント</a><span id="headerName"></span><span class="avatar" id="avatar"></span><button class="nav-button" id="logoutBtn">ログアウト</button></nav>
+  </header>
+  <main class="shell narrow-shell">
+    <section class="hero"><div><div class="eyebrow">口座詳細</div><h1>口座情報</h1><p>口座残高と最近の取引を確認できます。</p></div></section>
+    <section class="card"><div class="card-pad"><div id="content">読み込み中...</div></div></section>
+    <p class="back-link"><a class="btn btn-secondary" href="/dashboard.html">← ホームへ戻る</a></p>
+  </main>
+  <script type="module" src="/account.js"></script>
+</body>
+</html>
