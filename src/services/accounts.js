@@ -31,8 +31,8 @@ export function listAccountsForUser(userId) {
   return findAccountsForCustomer(userId).map(presentAccount);
 }
 
-export function getAccountDetail(customerId, accountId) {
-  return presentAccount(findAccountDetail(customerId, accountId));
+export function getAccountDetail(accountId) {
+  return presentAccount(findAccountDetail(accountId));
 }
 
 export function recentActivityForUser(userId) {

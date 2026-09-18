@@ -129,7 +129,7 @@ const server = http.createServer(async (req, res) => {
     if (accountMatch && req.method === 'GET') {
       const user = currentUser(req, res);
       if (!user) return;
-      const account = getAccountDetail(user.id, Number(accountMatch[1]));
+      const account = getAccountDetail(Number(accountMatch[1]));
       if (!account) return json(res, 404, { error: 'ACCOUNT_NOT_FOUND' });
       return json(res, 200, {
         account,
