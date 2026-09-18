@@ -22,9 +22,9 @@ async function sendChat() {
   input.value = '';
   try {
     const result = await api('/api/assistant', { method: 'POST', body: JSON.stringify({ message }) });
-    const eventNames = { read_accounts: '口座情報の参照', retrieve_partner_note: '登録先メモの取得', transfer_funds: '振込処理' };
-    const eventResults = { completed: '完了' };
-    const events = (result.events || []).map(event => `<div class="tool-event">処理：${escapeHtml(eventNames[event.name] || event.name)} / 結果：${escapeHtml(eventResults[event.result] || event.result)}</div>`).join('');
+    const eventNames = { read_accounts: '口座情報の参照', retrieve_partner_note: '登録先メモの取得', transfer_funds: '振込処理', assistant_action: 'アシスタント操作' };
+    const eventResult = value => String(value || '').startsWith('completed') ? '完了' : String(value || '');
+    const events = (result.events || []).map(event => `<div class="tool-event">処理：${escapeHtml(eventNames[event.name] || '連携処理')} / 結果：${escapeHtml(eventResult(event.result))}</div>`).join('');
     chat.insertAdjacentHTML('beforeend', `<div class="bubble ai">${escapeHtml(result.answer)}${events}</div>`);
     chat.scrollTop = chat.scrollHeight;
   } catch {
