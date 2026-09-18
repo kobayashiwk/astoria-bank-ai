@@ -2,7 +2,7 @@
   "name": "asteria-digital-bank",
   "version": "2.0.0",
   "private": true,
-  "description": "Self-contained reference banking application for local evaluation.",
+  "description": "ローカル環境で動作する銀行Webアプリケーション。",
   "type": "module",
   "scripts": {
     "start": "node server.js",

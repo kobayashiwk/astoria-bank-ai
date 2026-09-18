@@ -22,7 +22,9 @@ async function sendChat() {
   input.value = '';
   try {
     const result = await api('/api/assistant', { method: 'POST', body: JSON.stringify({ message }) });
-    const events = (result.events || []).map(event => `<div class="tool-event">処理：${escapeHtml(event.name)} / 結果：${escapeHtml(event.result)}</div>`).join('');
+    const eventNames = { read_accounts: '口座情報の参照', retrieve_partner_note: '登録先メモの取得', transfer_funds: '振込処理' };
+    const eventResults = { completed: '完了' };
+    const events = (result.events || []).map(event => `<div class="tool-event">処理：${escapeHtml(eventNames[event.name] || event.name)} / 結果：${escapeHtml(eventResults[event.result] || event.result)}</div>`).join('');
     chat.insertAdjacentHTML('beforeend', `<div class="bubble ai">${escapeHtml(result.answer)}${events}</div>`);
     chat.scrollTop = chat.scrollHeight;
   } catch {
