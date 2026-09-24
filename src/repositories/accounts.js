@@ -1,11 +1,11 @@
-import { getAccountsForUser, getOwnedAccount, getTransfersForUser } from '../db.js';
+import { getAccountsForUser, getAccountById, getTransfersForUser } from '../db.js';
 
 export function findAccountsForCustomer(customerId) {
   return getAccountsForUser(customerId);
 }
 
-export function findAccountDetail(customerId, accountId) {
-  return getOwnedAccount(customerId, accountId);
+export function findAccountDetail(accountId) {
+  return getAccountById(accountId);
 }
 
 export function findRecentActivityForCustomer(customerId) {
