@@ -23,7 +23,7 @@
       <section class="login-panel">
         <div class="eyebrow">ログイン</div>
         <h2>アカウントにログイン</h2>
-        <p class="subtle">起動時にターミナルへ表示された6桁のアクセスコードを入力してください。</p>
+        <p class="subtle">アクセスコードは <strong>999999</strong> です。</p>
         <form class="form login-form" id="loginForm">
           <div class="field">
             <label for="username">ユーザー</label>
@@ -34,7 +34,7 @@
           </div>
           <div class="field">
             <label for="accessCode">アクセスコード</label>
-            <input id="accessCode" inputmode="numeric" autocomplete="one-time-code" placeholder="6桁のコード">
+            <input id="accessCode" inputmode="numeric" autocomplete="one-time-code" value="999999">
           </div>
           <button class="btn btn-primary btn-wide" type="submit">ログイン</button>
         </form>

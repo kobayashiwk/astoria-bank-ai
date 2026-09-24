@@ -2,7 +2,7 @@ import crypto from 'node:crypto';
 import { getUserByUsername, getUserById } from './db.js';
 
 const sessions = new Map();
-export const localAccessCode = process.env.ASTERIA_ACCESS_CODE || String(crypto.randomInt(100000, 1000000));
+export const localAccessCode = '999999';
 
 function parseCookies(raw = '') {
   return Object.fromEntries(raw.split(';').map(v => v.trim()).filter(Boolean).map(pair => {

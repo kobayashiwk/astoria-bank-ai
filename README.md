@@ -19,29 +19,7 @@ npm start
 http://127.0.0.1:3000
 ```
 
-起動時にターミナルへ6桁のアクセスコードが表示されます。ログイン画面でそのコードを入力してください。
-
-毎回同じアクセスコードを使う場合は、環境変数を設定して起動できます。
-
-### Windows コマンドプロンプト
-
-```bat
-set ASTERIA_ACCESS_CODE=246810
-npm start
-```
-
-### PowerShell
-
-```powershell
-$env:ASTERIA_ACCESS_CODE="246810"
-npm start
-```
-
-### macOS / Linux
-
-```bash
-ASTERIA_ACCESS_CODE=246810 npm start
-```
+ログイン画面のアクセスコードは常に `999999` です。環境変数の設定は不要です。
 
 ## ログインユーザー
 
