@@ -1,4 +1,4 @@
-import { getOwnedAccount, getAccountById, getDailyUsage, addDailyUsage, adjustBalance, addTransfer } from '../db.js';
+import { getOwnedAccount, getAccountById, addDailyUsage, adjustBalance, addTransfer } from '../db.js';
 import { withAccountLock } from '../locks.js';
 
 export const DAILY_LIMIT = 500000;
@@ -12,9 +12,6 @@ export async function transferFunds({ userId, fromAccountId, toAccountId, amount
   return withAccountLock(fromAccountId, async () => {
     const source = getOwnedAccount(userId, fromAccountId);
     if (!source) throw Object.assign(new Error('Account not found'), { code: 'ACCOUNT_NOT_FOUND', status: 404 });
-    if (getDailyUsage(userId) + amount > DAILY_LIMIT) {
-      throw Object.assign(new Error('Daily transfer limit exceeded'), { code: 'DAILY_LIMIT_EXCEEDED', status: 409 });
-    }
     if (source.balance < amount) {
       throw Object.assign(new Error('Insufficient balance'), { code: 'INSUFFICIENT_FUNDS', status: 409 });
     }
